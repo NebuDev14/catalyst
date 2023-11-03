@@ -11,9 +11,9 @@ import {
   InputType,
   Field,
 } from 'type-graphql'
-import { Post } from './Post'
-import { User } from './User'
-import { Context } from './context'
+import { Post } from '../models/Post'
+import { User } from '../models/User'
+import { Context } from '../context'
 import { PostCreateInput } from './PostResolver'
 @InputType()
 class UserUniqueInput {
@@ -46,7 +46,7 @@ export class UserResolver {
           id: user.id,
         },
       })
-      .posts()
+      // .posts()
   }
 
   @Mutation((returns) => User)
@@ -62,9 +62,9 @@ export class UserResolver {
       data: {
         email: data.email,
         name: data.name,
-        posts: {
-          create: postData,
-        },
+        // posts: {
+        //   create: postData,
+        // },
       },
     })
   }
