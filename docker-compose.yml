@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: nycfirst
+      POSTGRES_USER: warren
+      POSTGRES_PASSWORD: blegh
+    ports:
+      - 5432:5432
